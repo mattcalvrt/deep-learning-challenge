@@ -22,11 +22,14 @@
     * "IS_SUCCESFUL" serves as our target variable for the neural network model. The remaining columns in the dataset serve as the features. The EIN and NAME identification columns are neither targe nor features and were dropped from the dataset.
 * Compiling, Training, and Evaluating the Model
     * The initial model included 2 hidden layers with 80 neurons in the first layer and 30 neurons in the second layer. The rectified linear unit (ReLU) activation function was used for the hidden layers and the sigmoid function was used for the output layer. We used 100 epochs to train the model. These variables were selected in an attempt to appropriately fit the model with minimal computational resources required. The model accuracy of 72.85% did not achieve target accuracy of 75%.
-    * We reran
+    * We used the following methods to optimize the model:
+      1. Increased the number of CLASSIFICATION bins by decreasing the cutoff value from 1500 to 100
+      2. Increased the number of hidden layers from 2 to 4
+      3. Added more neurons to the hidden layers
+      4. Used the Sigmoid activation function for the hidden layers (also tried tanh)
+   * Despite the changes to the variables, the model accuracy was 72.86%, still below the target of at least 75%.
        
-
 ## Summary
-
-The model with the resampled data seems to perform best for our purposes. The original dataframe has imbalanced classes (75,036 Healthy Loans vs 2,500 High Risk Loans, so model 1 performs well at predicting healthy loans (majority class); however, it doesn't perform well at predicting high-risk loans. Since we are interested in predicting high risk loans, we resampled the data by oversampling the high risk loans (minority class) in model 2. The logistic regression model using resampled data is less precise, but is better at predicting high risk loans (recall). For risk reduction, identifying as many high risk loans as possible is preferred, even if it results in an increase of false positives. 
+We were unable to optimize a neural network model to achieve higher than 75% accuracy. Additional preprocessing to clarify variables and/or capture outliers is necessary to improve model performance. We might also consider a Random Forest model since Random Forests are less influenced by outliers than other algorithms.
 
 
