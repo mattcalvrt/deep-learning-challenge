@@ -1,40 +1,29 @@
-# Credit Risk Classification Report
+# Neural Network Model Report
 
-## Overview of the Analysis
+## Overview
 
-* The purpose of this analysis is to use various techniques to train and evaluate a model based on loan risk. This was done using a CSV dataset of historical lending activity from a peer-to-peer lending services company. 
-* The financial data includes information about the loan (size, interest rate), information about the borrower (income, debt to income ratio, number of accounts, derogatory marks, total debt), and loan status (healthy = "0"; high risk of default = "1"). The goal of our analysis is to use this data to build a model that can predict loan risk.
-* Loan status serves as our target variable for the model. The remaining columns in the dataset serve as the features. The dataset consisted of 77,536 loans of which 75,036 were classified as healty and 2,500 were at high risk of default.
-* To train and evaluate the model we:
-    1. Split the data into training and testing sets;
-    2. Created a logistic regression model with the original data
-    3. Predicted a logistic regression model using resampled data (ie. oversampled the high risk loans)
-* To evaulate the model we:
-    1. Calculated the accuracy score of the model,
-    2. Generated a Confusion Matrix,
-    3. Printed the Classification Report
+* The purpose of this analysis is to build a tool that can help nonprofit foundation Alphabet Soup select applicants for funding with the best chance of success in their ventures. This was done using the features in the provided dataset to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup.
+* The data received from the business team is a CSV containing more than 34,000 organizations that have received funding from Alphabet Soup over the years. Within this dataset are a number of columns that capture metadata about each organization, such as:
+    * EIN and NAME—Identification columns
+    * APPLICATION_TYPE—Alphabet Soup application type
+    * AFFILIATION—Affiliated sector of industry
+    * CLASSIFICATION—Government organization classification
+    * USE_CASE—Use case for funding
+    * ORGANIZATION—Organization type
+    * STATUS—Active status
+    * INCOME_AMT—Income classification
+    * SPECIAL_CONSIDERATIONS—Special considerations for application
+    * ASK_AMT—Funding amount requested
+    * IS_SUCCESSFUL—Was the money used effectively
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
-
-* Machine Learning Model 1 - Logistic regression model using the original data:
-  * Balanced Accuracy: .9520
-  * Precision: 
-      * Healthy Loans: 1.0
-      * High Risk Loans: 0.85
-  * Recall: 
-      * Healthy Loans: 0.99
-      * High Risk Loans: 0.91
-
-* Machine Learning Model 2: Logistic regression model using the resampled data
-  * Balanced Accuracy: .9937
-  * Precision: 
-      * Healthy Loans: 1.0
-      * High Risk Loans: 0.84
-  * Recall: 
-      * Healthy Loans: 0.99
-      * High Risk Loans: 0.99
+* Data Preprocessing
+    * "IS_SUCCESFUL" serves as our target variable for the neural network model. The remaining columns in the dataset serve as the features. The EIN and NAME identification columns are neither targe nor features and were dropped from the dataset.
+* Compiling, Training, and Evaluating the Model
+    * The initial model included 2 hidden layers with 80 neurons in the first layer and 30 neurons in the second layer. The rectified linear unit (ReLU) activation function was used for the hidden layers and the sigmoid function was used for the output layer. We used 100 epochs to train the model. These variables were selected in an attempt to appropriately fit the model with minimal computational resources required. The model accuracy of 72.85% did not achieve target accuracy of 75%.
+    * We reran
+       
 
 ## Summary
 
